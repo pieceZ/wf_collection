@@ -26,9 +26,9 @@ AppAsset::register($this);
     <?=Html::cssFile('@web/font-awesome/css/font-awesome.css')?>
     <link href='http://fonts.useso.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
 
-    <?=Html::jsFile('@web/assets/c9774a79/jquery.js')?>
-    <?=Html::jsFile('@web/assets/3d8ce789/js/bootstrap.min.js')?>
-    <?=Html::jsFile('@web/assets/f63a6e0b/yii.js')?>
+    <?=Html::jsFile('@web/js/jquery.min.js')?>
+    <?=Html::jsFile('@web/js/bootstrap.min.js')?>
+
 </head>
 <body>
     <?php $this->beginBody() ?>
