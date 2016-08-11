@@ -78,11 +78,11 @@ AppAsset::register($this);
     <!--sidebar-menu-->
     <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
         <ul>
-            <li class="active"><a href="/index.php/workflow-log/bar-chart"><i class="icon icon-home"></i> <span>柱状图</span></a> </li>
-            <li> <a href="/index.php/workflow-log/line-chart"><i class="icon icon-signal"></i> <span>线状图</span></a> </li>
-            <li> <a href="/index.php/workflow-log/index"><i class="icon icon-inbox"></i> <span>日志列表</span></a> </li>
-            <li><a href="/index.php/workflow-log/index"><i class="icon icon-th"></i> <span>日志分类图</span></a></li>
-            <li><a href="/index.php/workflow-log/index"><i class="icon icon-fullscreen"></i> <span>日志分类图</span></a></li>
+            <li class="active"><a href="/workflow-log/bar-chart"><i class="icon icon-home"></i> <span>柱状图</span></a> </li>
+            <li> <a href="/workflow-log/line-chart"><i class="icon icon-signal"></i> <span>线状图</span></a> </li>
+            <li> <a href="/workflow-log/index"><i class="icon icon-inbox"></i> <span>日志列表</span></a> </li>
+            <li><a href="/workflow-log/index"><i class="icon icon-th"></i> <span>日志分类图</span></a></li>
+            <li><a href="/workflow-log/index"><i class="icon icon-fullscreen"></i> <span>日志分类图</span></a></li>
             <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
                 <ul>
                     <li><a href="form-common.html">Basic Form</a></li>
@@ -90,8 +90,8 @@ AppAsset::register($this);
                     <li><a href="form-wizard.html">Form with Wizard</a></li>
                 </ul>
             </li>
-            <li><a href="/index.php/workflow-log/bar-chart"><i class="icon icon-tint"></i> <span>客户类别</span></a></li>
-            <li><a href="/index.php/workflow-log/bar-chart"><i class="icon icon-pencil"></i> <span>客户列表</span></a></li>
+            <li><a href="/custom/index"><i class="icon icon-tint"></i> <span>客户类别</span></a></li>
+            <li><a href="/custom/index"><i class="icon icon-pencil"></i> <span>客户列表</span></a></li>
 
 
         </ul>

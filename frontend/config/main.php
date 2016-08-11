@@ -12,10 +12,12 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'language' => 'zh-CN',
+    'defaultRoute' => 'workflow-log/bar-chart',
     'components' => [
         'urlManager'=>[
             'enablePrettyUrl'  => true,
             'showScriptName' => false,
+            'rules' => [],
         ],
         'user' => [
             'identityClass' => 'common\models\User',

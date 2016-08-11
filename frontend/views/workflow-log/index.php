@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -31,7 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tbody>
                 <?php foreach($dataProvider->getModels() as $id=>$model) { ?>
                     <tr class="gradeX">
-                        <td><?php echo($model->Message)?></td>
+                        <td><a href="<?php echo Url::to(['workflow-log/view', 'id' => $model->id]) ?>" ><?php echo($model->Message)?></a></td>
                         <td><?php echo($model->DateTime)?></td>
                         <td><?php echo($model->Type)?></td>
                         <td class="center"><?php echo($model->ClientCode)?></td>
