@@ -6,12 +6,12 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\WorkflowLog */
 
-$this->title = '异常详情';
+$this->title = '日志详情';
 $this->params['breadcrumbs'][] = ['label' => 'Workflow Logs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="workflow-log-view">
-
+<br>
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [

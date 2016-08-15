@@ -82,7 +82,7 @@ AppAsset::register($this);
             <li> <a href="/workflow-log/line-chart"><i class="icon icon-signal"></i> <span>线状图</span></a> </li>
             <li> <a href="/workflow-log/index"><i class="icon icon-inbox"></i> <span>日志列表</span></a> </li>
             <li><a href="/workflow-log/index"><i class="icon icon-th"></i> <span>日志分类图</span></a></li>
-            <li><a href="/workflow-log/index"><i class="icon icon-fullscreen"></i> <span>日志分类图</span></a></li>
+
             <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>Forms</span> <span class="label label-important">3</span></a>
                 <ul>
                     <li><a href="form-common.html">Basic Form</a></li>
@@ -90,7 +90,8 @@ AppAsset::register($this);
                     <li><a href="form-wizard.html">Form with Wizard</a></li>
                 </ul>
             </li>
-            <li><a href="/custom/index"><i class="icon icon-tint"></i> <span>客户类别</span></a></li>
+            <li><a href="/custom-xj/index"><i class="icon icon-fullscreen"></i> <span>客户巡检</span></a></li>
+            <li><a href="/xun-jian-type/index"><i class="icon icon-tint"></i> <span>巡检类别</span></a></li>
             <li><a href="/custom/index"><i class="icon icon-pencil"></i> <span>客户列表</span></a></li>
 
 

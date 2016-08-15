@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '工作流错误日志';
+$this->title = '日志列表';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="workflow-log-index">
@@ -42,17 +42,28 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tbody>
             </table>
         </div>
+        <style type="text/css">
+            .log_pagination li { display: inline-block;}
+            .log_pagination .pagination {float:right;}
+        </style>
+        <div class="log_pagination"><?php echo \yii\widgets\LinkPager::widget([
+                    'pagination'=>$dataProvider->pagination,
+                    'prevPageLabel'=>'上一页',
+                    'nextPageLabel'=>'下一页',
+                    'lastPageLabel'=> '尾页',
+                    'firstPageLabel' => '首页',
+                ]) ?></div>
     </div>
 </div>
 <?=Html::jsFile('@web/js/jquery.dataTables.min.js')?>
 <script type="text/javascript">
     $(document).ready(function(){
-
-        $('.data-table').dataTable({
-            "bJQueryUI": true,
-            "sPaginationType": "full_numbers",
-            "sDom": '<""l>t<"F"fp>'
-        });
+//
+//        $('.data-table').dataTable({
+//            "bJQueryUI": true,
+//            "sPaginationType": "full_numbers",
+//            "sDom": '<""l>t<"F"fp>'
+//        });
 
 
     });

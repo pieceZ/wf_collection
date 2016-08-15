@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\CustomSearch */
+/* @var $model frontend\models\XunJianTypeSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="custom-search">
+<div class="xun-jian-type-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -20,26 +20,16 @@ use yii\widgets\ActiveForm;
     ]); ?>
     <div class="row-fluid">
         <div class="span4">
-            <?= $form->field($model, 'custom_name') ?>
+            <?= $form->field($model, 'rule') ?>
         </div>
         <div class="span4">
-            <?= $form->field($model, 'custom_code') ?>
+            <?= $form->field($model, 'code') ?>
         </div>
         <div class="span4">
-            <?= $form->field($model, 'custom_erp_version') ?>
+            <?= $form->field($model, 'support_version') ?>
         </div>
     </div>
-    <div class="row-fluid">
-        <div class="span4">
-            <?= $form->field($model, 'custom_erp_url') ?>
-        </div>
-        <div class="span4">
-            <?= $form->field($model, 'custom_wf_url') ?>
-        </div>
-        <div class="span4">
 
-        </div>
-    </div>
 
     <div class="row-fluid">
         <div  class="span10"></div>
@@ -48,7 +38,6 @@ use yii\widgets\ActiveForm;
     </div>
 
 
-    <?php // echo $form->field($model, 'custom_erp_version') ?>
 
 
     <?php ActiveForm::end(); ?>

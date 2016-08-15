@@ -4,19 +4,19 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel frontend\models\CustomSearch */
+/* @var $searchModel frontend\models\XunJianTypeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = '客户信息';
+$this->title = '巡检类别';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="custom-index">
+<div class="xun-jian-type-index">
 
     <h3><?= Html::encode($this->title) ?></h3>
     <?php  echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <p>
-        <?= Html::a('新增客户信息', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增巡检类别', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?= GridView::widget([
@@ -24,16 +24,17 @@ $this->params['breadcrumbs'][] = $this->title;
 
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'custom_code',
-            'custom_name',
-            'custom_wf_url:url',
-            'custom_erp_url:url',
-            'custom_erp_version',
-
+            'code',
+            'rule',
+            'action_url:url',
+            [
+                'label'=>'支持版本',
+                'value'=>'support_version',
+                'headerOptions' => ['width' => '60'],
+            ],
             ['class' => 'yii\grid\ActionColumn',
+                'options' => ['width' => '80px;'],
                 'header' => '操作',
-
                 'template' => '{view} {update}',
                 'buttons' => [
                     'view' => function ($url, $model, $key) {

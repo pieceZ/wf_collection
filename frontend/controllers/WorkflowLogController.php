@@ -8,10 +8,9 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\WorkflowLogSearch;
 
-/**
- * WorkflowLogController implements the CRUD actions for WorkflowLog model.
- */
+
 class WorkflowLogController extends Controller
 {
     public $enableCsrfValidation = false;
@@ -28,25 +27,25 @@ class WorkflowLogController extends Controller
         ];
     }
 
-    /**
-     * Lists all WorkflowLog models.
-     * @return mixed
-     */
+
     public function actionIndex()
     {
+
         $dataProvider = new ActiveDataProvider([
             'query' => WorkflowLog::find(),
+            'pagination' => [
+                'pagesize' => '10',
+            ],
         ]);
+
+
         return $this->render('index', [
+
             'dataProvider' => $dataProvider,
         ]);
     }
 
-    /**
-     * Displays a single WorkflowLog model.
-     * @param integer $id
-     * @return mixed
-     */
+
     public function actionView($id)
     {
         return $this->render('view', [
@@ -57,7 +56,6 @@ class WorkflowLogController extends Controller
 
     public function actionCreate()
     {
-        //var_dump(Yii::$app->request->post());die;
 
         $postData = file_get_contents('php://input');
 
@@ -107,15 +105,6 @@ class WorkflowLogController extends Controller
         ]);
     }
 
-
-
-    /**
-     * Finds the WorkflowLog model based on its primary key value.
-     * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return WorkflowLog the loaded model
-     * @throws NotFoundHttpException if the model cannot be found
-     */
     protected function findModel($id)
     {
         if (($model = WorkflowLog::findOne($id)) !== null) {

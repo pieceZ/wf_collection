@@ -45,7 +45,12 @@ class Custom extends \yii\db\ActiveRecord
             'custom_name' => '客户名称',
             'custom_wf_url' => '工作流地址',
             'custom_erp_url' => 'Erp地址',
-            'custom_erp_version' => '客户工作流版本',
+            'custom_erp_version' => 'Erp版本',
         ];
+    }
+
+    public function getCustomXj()
+    {
+        return $this->hasMany(CustomXj::className(), ['custom_id' => 'custom_id']);
     }
 }

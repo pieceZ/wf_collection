@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model frontend\models\Custom */
+/* @var $model frontend\models\XunJianType */
 
-$this->title = '新增客户';
-$this->params['breadcrumbs'][] = ['label' => 'Customs', 'url' => ['index']];
+$this->title = '新增巡检类别';
+$this->params['breadcrumbs'][] = ['label' => 'Xun Jian Types', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="custom-create">
+<div class="xun-jian-type-create">
 
     <h3><?= Html::encode($this->title) ?></h3>
 

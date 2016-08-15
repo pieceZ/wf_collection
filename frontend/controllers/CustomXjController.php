@@ -2,16 +2,18 @@
 
 namespace frontend\controllers;
 
+use frontend\models\XunJianType;
 use Yii;
-use frontend\models\Custom;
-use frontend\models\CustomSearch;
+use frontend\models\CustomXj;
+use frontend\models\CustomXjSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use frontend\models\Custom;
+use yii\data\ActiveDataProvider;
 
 
-
-class CustomController extends Controller
+class CustomXjController extends Controller
 {
     public function behaviors()
     {
@@ -25,10 +27,9 @@ class CustomController extends Controller
         ];
     }
 
-
     public function actionIndex()
     {
-        $searchModel = new CustomSearch();
+        $searchModel = new CustomXjSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -40,47 +41,58 @@ class CustomController extends Controller
 
     public function actionView($id)
     {
+
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
     }
 
-
     public function actionCreate()
     {
-        $model = new Custom();
+        $model = new CustomXj();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->custom_id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         } else {
+            $xj = new XunJianType();
+            $xjModelList = $xj::find()->all();
+            $xjList=[];
+
+            foreach($xjModelList as $id=>$item){
+                $xjList[$item->id]=$item->code;
+            }
+
+            $custom = new Custom();
+            $customModelList = $custom::find()->all();
+            $customList=[];
+
+            foreach($customModelList as $id=>$item){
+                $customList[$item->custom_id]= $item->custom_name;
+            }
+
             return $this->render('create', [
                 'model' => $model,
+                'xjList' => $xjList,
+                'customList' => $customList,
             ]);
         }
     }
 
 
-    public function actionUpdate($id)
+    public function actionDelete($id)
     {
-        $model = $this->findModel($id);
+        $this->findModel($id)->delete();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->custom_id]);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
-        }
+        return $this->redirect(['index']);
     }
+
 
     protected function findModel($id)
     {
-        if (($model = Custom::findOne($id)) !== null) {
+        if (($model = CustomXj::findOne($id)) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
-
-
 }

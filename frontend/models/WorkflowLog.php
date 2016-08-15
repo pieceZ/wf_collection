@@ -62,7 +62,7 @@ class WorkflowLog extends \yii\db\ActiveRecord
             'Browser' => 'Browser',
             'Sessions' => 'Sessions',
             'Cookies' => 'Cookies',
-            'ClientCode' => 'ClientCode',
+            'ClientCode' => '客户编码',
         ];
     }
 }

@@ -5,7 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model frontend\models\WorkflowLog */
 
-$this->title = '工作流错误日志';
+$this->title = '日志线状图';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="workflow-log-update">
