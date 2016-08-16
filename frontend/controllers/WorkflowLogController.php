@@ -30,7 +30,6 @@ class WorkflowLogController extends Controller
 
     public function actionIndex()
     {
-
         $dataProvider = new ActiveDataProvider([
             'query' => WorkflowLog::find(),
             'pagination' => [
@@ -56,7 +55,6 @@ class WorkflowLogController extends Controller
 
     public function actionCreate()
     {
-
         $postData = file_get_contents('php://input');
 
         $jsonData = json_decode($postData,true);
@@ -101,6 +99,23 @@ class WorkflowLogController extends Controller
             $arr[$id]= $arr2;
         }
         return $this->render('line-chart', [
+            'dataProvider' => json_encode($arr),
+        ]);
+    }
+
+    public function actionCustomBarChart()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => WorkflowLog::findBySql("select IFNULL(ClientCode,'δ֪') as ClientCode,count(1) Type from workflow_log GROUP BY ClientCode"),
+        ]);
+
+        $arr=[];
+        $data = $dataProvider->getModels();
+        foreach($data as $id=>$model){
+            $arr2 = array( "ClientCode" => $model->ClientCode ,"Count" =>  $model->Type);
+            $arr[$id]= $arr2;
+        }
+        return $this->render('custom-bar-chart', [
             'dataProvider' => json_encode($arr),
         ]);
     }
